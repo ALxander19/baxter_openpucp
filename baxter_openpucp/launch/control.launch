@@ -1,0 +1,15 @@
+<launch>
+
+    <!-- Generate/Load robot description file >
+    <include file="$(find baxter_gazebo)/launch/baxter_world.launch"/-->
+
+    <!-- Display faces on the robot's head -->
+    <node pkg="baxter_openpucp" name="faces"  type="faces.py" />
+
+    <!-- Moves head and the eyes blink -->
+    <node pkg="baxter_openpucp" name="autonomos_life"  type="autonomos_life.py" />
+
+    <!-- Moves head and the eyes blink -->
+    <node pkg="baxter_openpucp" name="hugh_control"  type="hugh_control.py" output="screen" />
+
+</launch>
